@@ -1,6 +1,20 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapTo = () => {
   // TODO: Implement the gsap.to() method
-
+  useGSAP(() =>{
+    gsap.to("#blue-box", {
+      x:200,
+      // y:200,
+      repeat:-1,
+      yoyo:true,
+      duration:5,
+      rotation:360,
+      ease:'circ.in'
+    }) //we are targeting by id
+  },[]) //kind of like useEffect
+  
   return (
     <main>
       <h1>GsapTo</h1>
